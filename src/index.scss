@@ -1,0 +1,34 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-input {
+  padding: 2rem;
+  .inputWrapper {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-evenly;
+    .input {
+      flex: 1;
+      label {
+      }
+      textarea {
+        margin-top: 1rem !important;
+        width: 95%;
+        height: 300px;
+        display: block;
+        padding: 0.8rem;
+      }
+    }
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 0.5rem;
+    width: 100%;
+    margin: 2rem auto;
+    cursor: pointer;
+  }
+}
