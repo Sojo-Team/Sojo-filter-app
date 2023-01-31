@@ -5,7 +5,7 @@ const Intercection = ({ data }) => {
   return (
     <>
       <div className="input">
-        <label htmlFor="ao">A Names</label>
+        <label htmlFor="ao">A Names (B ma navako)</label>
         <textarea
           id="ao"
           value={data}
