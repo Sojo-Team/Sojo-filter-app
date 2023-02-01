@@ -9,15 +9,31 @@ export const getDuplicatingValues = (listA, listB) => {
       }
     }
   }
-  return arr;
+  return [...new Set(arr)];
 };
 
 export const getNamesFromA = (listA, listB) => {
-  let arr = listA.filter((item) => !listB.includes(item));
+  const newArrA = listA.map((item) => {
+    return (item = item.trim().toLowerCase());
+  });
+
+  const newArrB = listB.map((item) => {
+    return (item = item.trim().toLowerCase());
+  });
+
+  let arr = newArrA.filter((item) => !newArrB.includes(item));
   return arr;
 };
 
 export const getNamesFromB = (listA, listB) => {
-  let arr = listB.filter((item) => !listA.includes(item));
+  const newArrA = listA.map((item) => {
+    return (item = item.trim().toLowerCase());
+  });
+
+  const newArrB = listB.map((item) => {
+    return (item = item.trim().toLowerCase());
+  });
+
+  let arr = newArrB.filter((item) => !newArrA.includes(item));
   return arr;
 };
