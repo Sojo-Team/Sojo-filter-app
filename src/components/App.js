@@ -4,11 +4,7 @@ import B from "./InputFields/B";
 import Intercection from "./OutputFields/Intercection";
 import AOnly from "./../components/OutputFields/AOnly";
 import BOnly from "./../components/OutputFields/BOnly";
-import {
-  getDuplicatingValues,
-  getNamesFromA,
-  getNamesFromB,
-} from "./../helper/main";
+import { findCommonStrings, findOnlyInA, findOnlyInB } from "./../helper/main";
 import "./../index.scss";
 
 const App = () => {
@@ -19,18 +15,18 @@ const App = () => {
   const [bNames, setBNames] = useState("");
 
   const getSame = () => {
-    const res = getDuplicatingValues(aInput.split("\n"), bInput.split("\n"));
-    setCommonNames(res.toString());
+    const res1 = findCommonStrings(aInput, bInput);
+    setCommonNames(res1.toString());
   };
-
   const getANames = () => {
-    const res = getNamesFromA(aInput.split("\n"), bInput.split("\n"));
-    setANames(res);
+    // const res = getNamesFromA(aInput.split("\n"), bInput.split("\n"));
+    const res1 = findOnlyInA(aInput, bInput);
+    setANames(res1);
   };
 
   const getBNames = () => {
-    const res = getNamesFromB(aInput.split("\n"), bInput.split("\n"));
-    setBNames(res);
+    const res1 = findOnlyInB(aInput, bInput);
+    setBNames(res1);
   };
 
   return (
